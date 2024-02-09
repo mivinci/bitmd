@@ -8,12 +8,18 @@ export type Props = {
 };
 
 export type Plugin = {
-  extension: MarkedExtension
-  listener: EventListener,
+  title: string,
+  icon: string,
+  listener?: EventListener,
+  extension?: MarkedExtension,
 };
 
 export type Event = {
   target: HTMLElement,
+  textarea: HTMLTextAreaElement,
+  value: string,
 };
 
-export type EventListener = (e: Event) => void;
+export type EventListener = (e: Event) => {
+  value: string,
+};

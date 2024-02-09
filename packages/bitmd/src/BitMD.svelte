@@ -1,43 +1,58 @@
 <script>
+  import "./index.css";
   import { Marked } from "marked";
+  import { wordcount } from "./lib";
+  import { builtin_plugins } from "./builtin";
   /** @type {string} */
   export let value;
   /** @type {boolean} */
   export let readonly = false;
-  /** @type {import("./index").Plugin[]} */
+  /** @type {import("./types").Plugin[]} */
   export let plugins = [];
+
+  plugins = [...builtin_plugins, ...plugins];
+
   /** @type {import("marked").MarkedExtension[]} */
-  const exts = plugins.reduce((a, v) => {
-    a.push(v.extension);
-    return a;
-  }, []);
+  const exts = [];
+  /** @type {import("./types").Plugin[]} */
+  const tools = [];
+  for (const p of plugins) {
+    if (p.extension) exts.push(p.extension);
+    if (p.listener) tools.push(p);
+  }
   const marked = new Marked(...exts);
+
+  /** @type {HTMLTextAreaElement} */
+  let textarea;
+  function __click(i) {
+    value = tools[i].listener({
+      textarea,
+      value,
+    }).value;
+  }
 </script>
 
 <div class="bitmd">
-  {#if !readonly}
-    <textarea bind:value />
-  {/if}
-  <article>
-    {@html marked.parse(value)}
-  </article>
+  <header>
+    <nav>
+      {#each tools as { title, icon }, i}
+        <button {title} type="button" on:click={() => __click(i)}>
+          {@html icon}
+        </button>
+      {/each}
+    </nav>
+    <aside></aside>
+  </header>
+  <main>
+    {#if !readonly}
+      <textarea bind:this={textarea} bind:value />
+    {/if}
+    <article>
+      {@html marked.parse(value)}
+    </article>
+  </main>
+  <footer>
+    <div>Words: <strong>{wordcount(value)}</strong></div>
+  </footer>
 </div>
 
-<style>
-  .bitmd,
-  textarea,
-  article {
-    width: 100%;
-    height: 100%;
-  }
-  .bitmd {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1rem;
-  }
-  textarea {
-    box-sizing: border-box;
-    padding: 0.5rem;
-    font-size: 1rem;
-  }
-</style>

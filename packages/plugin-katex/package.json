@@ -1,0 +1,21 @@
+{
+  "name": "@bitmd/plugin-katex",
+  "version": "0.0.1",
+  "description": "BitMD plugin - Katex",
+  "type": "module",
+  "main": "dist/plugin-katex.js",
+  "module": "dist/plugin-katex.js",
+  "unpkg": "dist/plugin-katex.umd.cjs",
+  "scripts": {
+    "build": "vite build"
+  },
+  "devDependencies": {
+    "@types/katex": "^0.16.7",
+    "marked": "^12.0.0",
+    "vite": "^5.1.0"
+  },
+  "dependencies": {
+    "bitmd": "workspace:*",
+    "katex": "^0.16.9"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "bitmd",
+  "description": "The monorepo of bitmd.",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build:bitmd": "cd packages/bitmd && bun run build",
+    "build:plugin-gfm": "cd packages/plugin-gfm && bun run build"
+  }
+}

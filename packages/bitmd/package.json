@@ -1,0 +1,31 @@
+{
+  "name": "bitmd",
+  "version": "0.0.1",
+  "description": "BitMD - a pluggable markdown editor/viewer.",
+  "type": "module",
+  "main": "./dist/bitmd.umd.cjs",
+  "unpkg": "./dist/bitmd.umd.cjs",
+  "module": "./dist/bitmd.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "locales"
+  ],
+  "scripts": {
+    "build": "vite build && tsc",
+    "clean": "rm -r dist"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^3.0.2",
+    "@tsconfig/svelte": "^5.0.2",
+    "@types/bun": "latest",
+    "svelte": "^4.2.10",
+    "vite": "^5.1.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "marked": "^12.0.0"
+  }
+}

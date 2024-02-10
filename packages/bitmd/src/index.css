@@ -22,6 +22,7 @@ article {
   flex-direction: column;
 }
 
+.bitmd .bm-btn,
 .bitmd button {
   appearance: none;
   cursor: pointer;
@@ -31,10 +32,12 @@ article {
   padding: 0.25rem;
 }
 
+.bitmd .bm-btn:hover,
 .bitmd button:hover {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
+.bitmd .bm-btn > svg,
 .bitmd button > svg {
   display: block;
   width: 20px;
@@ -69,6 +72,7 @@ article {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
   flex-grow: 1;
+  overflow-y: auto;
 }
 
 .bitmd>main>textarea {
@@ -79,4 +83,8 @@ article {
   outline: none;
   user-select: none;
   border-right: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.bitmd>main>article {
+  overflow-y: auto;
 }

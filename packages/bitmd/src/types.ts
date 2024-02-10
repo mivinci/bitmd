@@ -20,6 +20,6 @@ export type Event = MouseEvent & {
   textarea: HTMLTextAreaElement,
 };
 
-export type EventListener =
-  ((e: Event) => Promise<{ value?: string }>) |
-  ((e: Event) => Promise<void>);
+export type EventListener = (e: Event) => Promise<EventListenerResult>;
+
+export type EventListenerResult = { value: string } | void;

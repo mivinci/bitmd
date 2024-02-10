@@ -10,14 +10,12 @@
     "build": "vite build"
   },
   "devDependencies": {
-    "@types/katex": "^0.16.7",
     "marked": "^12.0.0",
     "vite": "^5.1.0"
   },
   "dependencies": {
     "bitmd": "workspace:*",
     "highlight.js": "^11.9.0",
-    "katex": "^0.16.9",
     "marked-highlight": "^2.1.1"
   }
 }

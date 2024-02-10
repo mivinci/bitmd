@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff" />
   <title>Vanilla - BitMD Example</title>
   <link rel="stylesheet" href="../../packages/bitmd/dist/style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css"
@@ -12,6 +13,7 @@
   <script src="../../packages/bitmd/dist/bitmd.umd.cjs"></script>
   <script src="../../packages/plugin-katex/dist/plugin-katex.umd.cjs"></script>
   <script src="../../packages/plugin-highlight/dist/plugin-highlight.umd.cjs"></script>
+  <script src="../../packages/plugin-image/dist/plugin-image.umd.cjs"></script>
 </head>
 
 <style>
@@ -36,6 +38,7 @@
         plugins: [
           bitmd_plugin_katex(),
           bitmd_plugin_highlight(),
+          bitmd_plugin_image(),
         ]
       }
     });

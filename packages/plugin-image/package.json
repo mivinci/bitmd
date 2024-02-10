@@ -1,0 +1,19 @@
+{
+  "name": "@bitmd/plugin-image",
+  "version": "0.0.1",
+  "description": "BitMD plugin - Image uploader.",
+  "type": "module",
+  "main": "dist/plugin-image.js",
+  "module": "dist/plugin-image.js",
+  "unpkg": "dist/plugin-image.umd.cjs",
+  "scripts": {
+    "build": "vite build"
+  },
+  "devDependencies": {
+    "marked": "^12.0.0",
+    "vite": "^5.1.0"
+  },
+  "dependencies": {
+    "bitmd": "workspace:*"
+  }
+}

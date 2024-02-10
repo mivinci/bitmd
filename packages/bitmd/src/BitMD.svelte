@@ -18,30 +18,40 @@
   const tools = [];
   for (const p of plugins) {
     if (p.extension) exts.push(p.extension);
-    if (p.listener) tools.push(p);
+    if (p.onclick) tools.push(p);
   }
   const marked = new Marked(...exts);
 
   /** @type {HTMLTextAreaElement} */
   let textarea;
-  function __click(i) {
-    value = tools[i].listener({
+  /**
+   * @param {MouseEvent} e
+   * @param {number} i
+   */
+  async function __click(e, i) {
+    const res = await tools[i].onclick({
+      ...e,
       textarea,
-      value,
-    }).value;
+    });
+    if (res && res.value) {
+      value = res.value;
+    }
   }
 </script>
 
 <div class="bitmd">
   <header>
-    <nav>
-      {#each tools as { title, icon }, i}
-        <button {title} type="button" on:click={() => __click(i)}>
-          {@html icon}
-        </button>
-      {/each}
-    </nav>
-    <aside></aside>
+    {#each ["left", "right"] as pos}
+      <nav>
+        {#each tools as { title, icon, position }, i}
+          {#if position === pos}
+            <button {title} type="button" on:click={(e) => __click(e, i)}>
+              {@html icon}
+            </button>
+          {/if}
+        {/each}
+      </nav>
+    {/each}
   </header>
   <main>
     {#if !readonly}
@@ -55,4 +65,3 @@
     <div>Words: <strong>{wordcount(value)}</strong></div>
   </footer>
 </div>
-

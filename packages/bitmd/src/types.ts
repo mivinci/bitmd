@@ -9,17 +9,17 @@ export type Props = {
 
 export type Plugin = {
   title: string,
-  icon: string,
-  listener?: EventListener,
+  icon?: string,
+  position?: "left" | "right",
+  onclick?: EventListener,
+  onselect?: EventListener,
   extension?: MarkedExtension,
 };
 
-export type Event = {
-  target: HTMLElement,
+export type Event = MouseEvent & {
   textarea: HTMLTextAreaElement,
-  value: string,
 };
 
-export type EventListener = (e: Event) => {
-  value: string,
-};
+export type EventListener =
+  ((e: Event) => Promise<{ value?: string }>) |
+  ((e: Event) => Promise<void>);

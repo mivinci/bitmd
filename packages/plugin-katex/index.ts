@@ -77,19 +77,20 @@ function katex(opts?: Options): Plugin {
   return {
     title: "math",
     icon: `<svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 5h-7L8 19l-3-6H3m11 0l6 6m-6 0l6-6"/></svg>`,
-    listener: (e) => {
-      let value;
-      const { selectionStart, selectionEnd } = e.textarea;
+    position: "left",
+    onclick: async (e) => {
+      let updated;
+      const { selectionStart, selectionEnd, value } = e.textarea;
       if (selectionStart === selectionEnd) {
-        value = `${e.value.slice(0, selectionStart)}\n$$\n\n$$\n${e.value.slice(selectionStart)}`;
+        updated = `${value.substring(0, selectionStart)}\n\n$$\n\n$$\n\n${value.substring(selectionStart)}`;
         e.textarea.selectionStart += 4;
         e.textarea.selectionEnd = e.textarea.selectionStart;
       } else {
-        const selected = e.value.slice(selectionStart, selectionEnd);
-        value = `${e.value.slice(0, selectionStart)} $${selected}$ ${e.value.slice(selectionEnd)}`;
+        const selected = value.substring(selectionStart, selectionEnd);
+        updated = `${value.substring(0, selectionStart)} $${selected}$ ${value.substring(selectionEnd)}`;
         e.textarea.selectionStart = e.textarea.selectionEnd;
       }
-      return { value };
+      return { value: updated };
     },
     extension: {
       extensions: [

@@ -8,8 +8,10 @@
   <link rel="stylesheet" href="../../packages/bitmd/dist/style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css"
     integrity="sha384-GvrOXuhMATgEsSwCs4smul74iXGOixntILdUW9XmUC6+HX0sLNAK3q71HotJqlAn" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/github.min.css">
   <script src="../../packages/bitmd/dist/bitmd.umd.cjs"></script>
   <script src="../../packages/plugin-katex/dist/plugin-katex.umd.cjs"></script>
+  <script src="../../packages/plugin-highlight/dist/plugin-highlight.umd.cjs"></script>
 </head>
 
 <style>
@@ -33,6 +35,7 @@
         value: "# Heading",
         plugins: [
           bitmd_plugin_katex(),
+          bitmd_plugin_highlight(),
         ]
       }
     });

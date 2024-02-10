@@ -8,6 +8,7 @@
   "scripts": {
     "build:bitmd": "cd packages/bitmd && bun run build",
     "build:plugin-gfm": "cd packages/plugin-gfm && bun run build",
-    "build:plugin-katex": "cd packages/plugin-katex && bun run build"
+    "build:plugin-katex": "cd packages/plugin-katex && bun run build",
+    "build:plugin-highlight": "cd packages/plugin-highlight && bun run build"
   }
 }

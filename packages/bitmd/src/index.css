@@ -88,3 +88,8 @@ article {
 .bitmd>main>article {
   overflow-y: auto;
 }
+
+.bitmd>main>article ul:has(input[type=checkbox]) {
+  list-style: none;
+  padding-inline-start: 20px;
+}

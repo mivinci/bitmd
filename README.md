@@ -31,6 +31,18 @@ new bitmd.BitMD({
 
 Check out [examples/vanilla](./examples/vanilla/index.html) for the full code snippet. 
 
+## Plugins & Bindings
+
+Here are plugins or bindings finished or being planned.
+
+- [x] [plugin-gfm](./packages/plugin-gfm/) - GitHub flavored markdown
+- [x] [plugin-image](./packages/plugin-image/) - Image upload and insertion
+- [x] [plugin-katex](./packages/plugin-katex/) - LaTeX math formulas
+- [x] [plugin-highlight](./packages/plugin-highlight/) - Code highlighting
+- [ ] [plugin-mermaid](./packages/plugin-mermaid/) - Mermaid graghs and charts
+- [ ] [react](./packages/react/) - React binding of BitMD
+- [ ] [vue](./packages/vue/) - Vue binding of BitMD
+
 ## Develop
 
 To develop, make sure you have [bun](https://bun.sh) installed on your device.
@@ -45,6 +57,10 @@ bun i
 
 - [marked](https://marked.js.org)
 - [bytemd](https://bytemd.js.org)
+
+## License
+
+BitMD is MIT licensed.
 
 ##
 

@@ -1,0 +1,23 @@
+{
+  "name": "@bitmd/plugin-highlight",
+  "version": "0.0.1",
+  "description": "BitMD plugin - Code highlighting.",
+  "type": "module",
+  "main": "dist/plugin-highlight.js",
+  "module": "dist/plugin-highlight.js",
+  "unpkg": "dist/plugin-highlight.umd.cjs",
+  "scripts": {
+    "build": "vite build"
+  },
+  "devDependencies": {
+    "@types/katex": "^0.16.7",
+    "marked": "^12.0.0",
+    "vite": "^5.1.0"
+  },
+  "dependencies": {
+    "bitmd": "workspace:*",
+    "highlight.js": "^11.9.0",
+    "katex": "^0.16.9",
+    "marked-highlight": "^2.1.1"
+  }
+}

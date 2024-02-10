@@ -2,6 +2,16 @@
   "name": "@bitmd/plugin-gfm",
   "version": "0.0.1",
   "description": "BitMD plugin - GitHub flovered markdown",
+  "author": "mivinci <mivinci@qq.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/halobase/bitmd.git",
+    "directory": "packages/plugin-gfm"
+  },
+  "files": [
+    "dist",
+    "locales"
+  ],
   "type": "module",
   "main": "index.js",
   "module": "index.js",

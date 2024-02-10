@@ -2,6 +2,16 @@
   "name": "@bitmd/plugin-highlight",
   "version": "0.0.1",
   "description": "BitMD plugin - Code highlighting.",
+  "author": "mivinci <mivinci@qq.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/halobase/bitmd.git",
+    "directory": "packages/plugin-highlight"
+  },
+  "files": [
+    "dist",
+    "locales"
+  ],
   "type": "module",
   "main": "dist/plugin-highlight.js",
   "module": "dist/plugin-highlight.js",

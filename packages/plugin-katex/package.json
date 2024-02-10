@@ -2,6 +2,16 @@
   "name": "@bitmd/plugin-katex",
   "version": "0.0.1",
   "description": "BitMD plugin - Katex",
+  "author": "mivinci <mivinci@qq.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/halobase/bitmd.git",
+    "directory": "packages/plugin-katex"
+  },
+  "files": [
+    "dist",
+    "locales"
+  ],
   "type": "module",
   "main": "dist/plugin-katex.js",
   "module": "dist/plugin-katex.js",

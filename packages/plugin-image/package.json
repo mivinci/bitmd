@@ -2,6 +2,16 @@
   "name": "@bitmd/plugin-image",
   "version": "0.0.1",
   "description": "BitMD plugin - Image uploader.",
+  "author": "mivinci <mivinci@qq.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/halobase/bitmd.git",
+    "directory": "packages/plugin-image"
+  },
+  "files": [
+    "dist",
+    "locales"
+  ],
   "type": "module",
   "main": "dist/plugin-image.js",
   "module": "dist/plugin-image.js",

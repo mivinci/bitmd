@@ -11,15 +11,15 @@ export type Plugin = {
   title: string,
   icon?: string,
   position?: "left" | "right",
-  onclick?: EventListener,
-  onselect?: EventListener,
+  onclick?: EventHandler<Event & MouseEvent>,
+  onmounted?: EventHandler,
   extension?: MarkedExtension,
 };
 
-export type Event = MouseEvent & {
+export type Event = {
   textarea: HTMLTextAreaElement,
 };
 
-export type EventListener = (e: Event) => Promise<EventListenerResult>;
+export type EventHandler<E extends Event = Event, R extends EventHandlerResult = EventHandlerResult> = (e: E) => Promise<R>;
 
-export type EventListenerResult = { value: string } | void;
+export type EventHandlerResult = { value: string } | void;

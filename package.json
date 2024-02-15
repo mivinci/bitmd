@@ -1,6 +1,6 @@
 {
   "name": "bitmd",
-  "description": "The monorepo of bitmd.",
+  "description": "The BitMD monorepo.",
   "private": true,
   "workspaces": [
     "packages/*"

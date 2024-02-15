@@ -3,6 +3,7 @@
   import { Marked } from "marked";
   import { wordcount } from "./lib";
   import { builtin_plugins } from "./builtin";
+  import { onMount } from "svelte";
   /** @type {string} */
   export let value;
   /** @type {boolean} */
@@ -37,6 +38,14 @@
       value = res.value;
     }
   }
+
+  onMount(async () => {
+    plugins.forEach(async (p) => {
+      if (p.onmounted) {
+        await p.onmounted({ textarea });
+      }
+    });
+  });
 </script>
 
 <div class="bitmd">

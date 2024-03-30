@@ -48,7 +48,7 @@ Here are plugins or bindings finished or being planned.
 To develop, make sure you have [bun](https://bun.sh) installed on your device.
 
 ```bash
-git clone https://github.com/halobase/bitmd.git
+git clone https://github.com/mivinci/bitmd.git
 cd bitmd
 bun i
 ```

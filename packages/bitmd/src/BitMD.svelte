@@ -50,17 +50,19 @@
 
 <div class="bitmd">
   <header>
-    {#each ["left", "right"] as pos}
-      <nav>
-        {#each tools as { title, icon, position }, i}
-          {#if position === pos}
-            <button {title} type="button" on:click={(e) => __click(e, i)}>
-              {@html icon}
-            </button>
-          {/if}
-        {/each}
-      </nav>
-    {/each}
+    {#if !readonly}
+      {#each ["left", "right"] as pos}
+        <nav>
+          {#each tools as { title, icon, position }, i}
+            {#if position === pos}
+              <button {title} type="button" on:click={(e) => __click(e, i)}>
+                {@html icon}
+              </button>
+            {/if}
+          {/each}
+        </nav>
+      {/each}
+    {/if}
   </header>
   <main>
     {#if !readonly}
@@ -71,6 +73,8 @@
     </article>
   </main>
   <footer>
-    <div>Words: <strong>{wordcount(value)}</strong></div>
+    {#if !readonly}
+      <div>Words: <strong>{wordcount(value)}</strong></div>
+    {/if}
   </footer>
 </div>

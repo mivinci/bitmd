@@ -5,7 +5,7 @@
   "author": "mivinci <mivinci@qq.com>",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/halobase/bitmd.git",
+    "url": "git+https://github.com/mivinci/bitmd.git",
     "directory": "packages/plugin-highlight"
   },
   "files": [
